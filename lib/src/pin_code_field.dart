@@ -62,10 +62,16 @@ class PinCodeField extends StatelessWidget {
       ),
       duration: const Duration(microseconds: 40000),
       child: pin.length > pinCodeFieldIndex
-          ? const Icon(
-              Icons.circle,
-              color: Colors.white,
-              size: 12,
+          ? Center(
+              child: Text(
+                pin.split("").elementAt(pinCodeFieldIndex),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+                // color: Colors.white,
+                // size: 12,
+              ),
             )
           : const SizedBox(),
     );

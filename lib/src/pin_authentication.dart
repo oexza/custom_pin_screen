@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'theme.dart';
 import 'pin_code_field.dart';
+import 'theme.dart';
 
 /// Pin authentication screen
 class PinAuthentication extends StatefulWidget {
@@ -100,7 +100,8 @@ class _PinAuthenticationState extends State<PinAuthentication> {
                   });
                 }
                 widget.onChanged!(pin);
-                if (pin.length >= 4 && widget.onCompleted != null) {
+                if (pin.length >= widget.maxLength &&
+                    widget.onCompleted != null) {
                   widget.onCompleted!(pin);
                 }
               },
@@ -139,7 +140,8 @@ class _PinAuthenticationState extends State<PinAuthentication> {
                 });
               }
               widget.onChanged!(pin);
-              if (pin.length >= 4 && widget.onCompleted != null) {
+              if (pin.length >= widget.maxLength &&
+                  widget.onCompleted != null) {
                 await widget.onCompleted!(pin);
               }
             },
@@ -221,6 +223,10 @@ class _PinAuthenticationState extends State<PinAuthentication> {
                   pinCodeFieldIndex: i,
                   theme: _pinTheme,
                 ),
+              Icon(
+                Icons.remove_red_eye_sharp,
+                color: Theme.of(context).textTheme.bodyText1?.color,
+              )
             ],
           ),
           const SizedBox(
