@@ -51,12 +51,12 @@ class PinCodeField extends StatelessWidget {
         border: theme.shape == PinCodeFieldShape.underline
             ? Border(
                 bottom: BorderSide(
-                  color: getFillColorFromIndex,
+                  color: theme.borderColor ?? getFillColorFromIndex,
                   width: theme.borderWidth,
                 ),
               )
             : Border.all(
-                color: getFillColorFromIndex,
+                color: theme.borderColor ?? getFillColorFromIndex,
                 width: theme.borderWidth,
               ),
       ),
@@ -65,7 +65,7 @@ class PinCodeField extends StatelessWidget {
           ? Center(
               child: Text(
                 pin.split("").elementAt(pinCodeFieldIndex),
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),

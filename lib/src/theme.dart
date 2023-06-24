@@ -51,6 +51,8 @@ class PinTheme {
   /// this defines the padding of each enclosing container of an input field. Default is [0.0]
   final EdgeInsetsGeometry fieldOuterPadding;
 
+  final Color? borderColor;
+
   const PinTheme.defaults({
     this.backgroundColor = Colors.white,
     this.textColor = Colors.blue,
@@ -68,43 +70,46 @@ class PinTheme {
     this.activeFillColor = Colors.green,
     this.selectedFillColor = Colors.blue,
     this.inactiveFillColor = Colors.red,
+    this.borderColor,
   });
 
-  factory PinTheme(
-      {Color? backgroundColor,
-      Color? textColor,
-      Color? submitColor,
-      Color? keysColor,
-      Color? activeColor,
-      Color? selectedColor,
-      Color? inactiveColor,
-      Color? activeFillColor,
-      Color? selectedFillColor,
-      Color? inactiveFillColor,
-      BorderRadius? borderRadius,
-      double? fieldHeight,
-      double? fieldWidth,
-      double? borderWidth,
-      PinCodeFieldShape? shape,
-      EdgeInsetsGeometry? fieldOuterPadding}) {
+  factory PinTheme({
+    Color? backgroundColor,
+    Color? textColor,
+    Color? submitColor,
+    Color? keysColor,
+    Color? activeColor,
+    Color? selectedColor,
+    Color? inactiveColor,
+    Color? activeFillColor,
+    Color? selectedFillColor,
+    Color? inactiveFillColor,
+    BorderRadius? borderRadius,
+    double? fieldHeight,
+    double? fieldWidth,
+    double? borderWidth,
+    PinCodeFieldShape? shape,
+    EdgeInsetsGeometry? fieldOuterPadding,
+    Color? borderColor,
+  }) {
     const defaultValues = PinTheme.defaults();
     return PinTheme.defaults(
-      backgroundColor: backgroundColor ?? defaultValues.backgroundColor,
-      textColor: textColor ?? defaultValues.textColor,
-      submitColor: submitColor ?? defaultValues.submitColor,
-      keysColor: keysColor ?? defaultValues.keysColor,
-      activeColor: activeColor ?? defaultValues.activeColor,
-      activeFillColor: activeFillColor ?? defaultValues.activeFillColor,
-      borderRadius: borderRadius ?? defaultValues.borderRadius,
-      borderWidth: borderWidth ?? defaultValues.borderWidth,
-      fieldHeight: fieldHeight ?? defaultValues.fieldHeight,
-      fieldWidth: fieldWidth ?? defaultValues.fieldWidth,
-      inactiveColor: inactiveColor ?? defaultValues.inactiveColor,
-      inactiveFillColor: inactiveFillColor ?? defaultValues.inactiveFillColor,
-      selectedColor: selectedColor ?? defaultValues.selectedColor,
-      selectedFillColor: selectedFillColor ?? defaultValues.selectedFillColor,
-      shape: shape ?? defaultValues.shape,
-      fieldOuterPadding: fieldOuterPadding ?? defaultValues.fieldOuterPadding,
-    );
+        backgroundColor: backgroundColor ?? defaultValues.backgroundColor,
+        textColor: textColor ?? defaultValues.textColor,
+        submitColor: submitColor ?? defaultValues.submitColor,
+        keysColor: keysColor ?? defaultValues.keysColor,
+        activeColor: activeColor ?? defaultValues.activeColor,
+        activeFillColor: activeFillColor ?? defaultValues.activeFillColor,
+        borderRadius: borderRadius ?? defaultValues.borderRadius,
+        borderWidth: borderWidth ?? defaultValues.borderWidth,
+        fieldHeight: fieldHeight ?? defaultValues.fieldHeight,
+        fieldWidth: fieldWidth ?? defaultValues.fieldWidth,
+        inactiveColor: inactiveColor ?? defaultValues.inactiveColor,
+        inactiveFillColor: inactiveFillColor ?? defaultValues.inactiveFillColor,
+        selectedColor: selectedColor ?? defaultValues.selectedColor,
+        selectedFillColor: selectedFillColor ?? defaultValues.selectedFillColor,
+        shape: shape ?? defaultValues.shape,
+        fieldOuterPadding: fieldOuterPadding ?? defaultValues.fieldOuterPadding,
+        borderColor: borderColor);
   }
 }

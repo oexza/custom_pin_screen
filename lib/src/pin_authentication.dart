@@ -79,13 +79,18 @@ class _PinAuthenticationState extends State<PinAuthentication> {
     return InkResponse(
       onTap: onPressed,
       key: icon?.key ?? Key("btn$number"),
-      child: Container(
-          height: 80,
-          width: 80,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-          ),
-          child: Center(child: getChild())),
+      child: Material(
+        elevation: 5,
+        color: _pinTheme.backgroundColor,
+        shape: const CircleBorder(),
+        child: Container(
+            height: 80,
+            width: 80,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+            ),
+            child: Center(child: getChild())),
+      ),
     );
   }
 
@@ -202,12 +207,15 @@ class _PinAuthenticationState extends State<PinAuthentication> {
           const SizedBox(
             height: 5,
           ),
-          Text(
-            widget.actionDescription ?? "Please enter your pin to continue",
-            style: const TextStyle(
-              // color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.normal,
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              widget.actionDescription ?? "Please enter your pin to continue",
+              style: const TextStyle(
+                // color: Colors.white,
+                fontSize: 14,
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ),
           const SizedBox(
@@ -225,7 +233,7 @@ class _PinAuthenticationState extends State<PinAuthentication> {
                 ),
               Icon(
                 Icons.remove_red_eye_sharp,
-                color: Theme.of(context).textTheme.bodyText1?.color,
+                color: Theme.of(context).textTheme.bodyLarge?.color,
               )
             ],
           ),

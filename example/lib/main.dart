@@ -48,13 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                     builder: (context) => PinAuthentication(
                       pinTheme: PinTheme(
-                        shape: PinCodeFieldShape.box,
-                        borderRadius: BorderRadius.circular(5),
-                        backgroundColor: Colors.green,
-                        keysColor: Colors.white,
-                        activeFillColor:
-                            const Color(0xFFF7F8FF).withOpacity(0.13),
-                      ),
+                          shape: PinCodeFieldShape.circle,
+                          borderRadius: BorderRadius.circular(5),
+                          backgroundColor: Colors.yellow,
+                          keysColor: Colors.white,
+                          activeFillColor:
+                              const Color(0xFFF7F8FF).withOpacity(0.13),
+                          borderColor: Colors.black),
                       onChanged: (v) {
                         if (kDebugMode) {
                           print(v);
