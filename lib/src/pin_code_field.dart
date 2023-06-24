@@ -39,7 +39,7 @@ class PinCodeField extends StatelessWidget {
     return AnimatedContainer(
       height: theme.fieldHeight,
       width: theme.fieldWidth,
-      margin: const EdgeInsets.symmetric(horizontal: 2),
+      margin: const EdgeInsets.symmetric(horizontal: 3),
       decoration: BoxDecoration(
         color: theme.shape == PinCodeFieldShape.underline
             ? Colors.transparent
@@ -65,8 +65,8 @@ class PinCodeField extends StatelessWidget {
           ? Center(
               child: Text(
                 pin.split("").elementAt(pinCodeFieldIndex),
-                style: const TextStyle(
-                    color: Colors.white,
+                style: TextStyle(
+                    color: theme.textColor,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
                 // color: Colors.white,
