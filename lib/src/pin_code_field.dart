@@ -39,7 +39,7 @@ class PinCodeField extends StatelessWidget {
     return AnimatedContainer(
       height: theme.fieldHeight,
       width: theme.fieldWidth,
-      margin: const EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 2),
       decoration: BoxDecoration(
         color: theme.shape == PinCodeFieldShape.underline
             ? Colors.transparent
