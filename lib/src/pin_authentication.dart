@@ -262,7 +262,7 @@ class _PinAuthenticationState extends State<PinAuthentication> {
               widget.onbuttonClick!();
             },
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 30, 0, 50),
+              padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
               child: Center(
                 child: widget.submitLabel,
               ),
