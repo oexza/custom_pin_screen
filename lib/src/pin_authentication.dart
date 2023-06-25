@@ -192,10 +192,12 @@ class _PinAuthenticationState extends State<PinAuthentication> {
     return Scaffold(
       backgroundColor: widget.pinTheme.backgroundColor,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Expanded(
-            child: SizedBox(),
-          ),
+          // const Expanded(
+          //   child: SizedBox(),
+          // ),
           Text(
             widget.action ?? "Enter PIN",
             style: const TextStyle(
@@ -204,9 +206,9 @@ class _PinAuthenticationState extends State<PinAuthentication> {
               // color: Colors.white,
             ),
           ),
-          const SizedBox(
-            height: 5,
-          ),
+          // const SizedBox(
+          //   height: 5,
+          // ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
