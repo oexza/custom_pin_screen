@@ -240,7 +240,7 @@ class _PinAuthenticationState extends State<PinAuthentication> {
             ],
           ),
           const SizedBox(
-            height: 80,
+            height: 40,
           ),
           Expanded(
             flex: 2,
