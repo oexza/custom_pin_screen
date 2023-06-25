@@ -196,7 +196,7 @@ class _PinAuthenticationState extends State<PinAuthentication> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // const Spacer(),
+            const Spacer(),
             Text(
               widget.action ?? "Enter PIN",
               style: const TextStyle(
