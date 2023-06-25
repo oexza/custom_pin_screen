@@ -200,6 +200,7 @@ class _PinAuthenticationState extends State<PinAuthentication> {
           ),
           Text(
             widget.action ?? "Enter PIN",
+            textAlign: TextAlign.justify,
             style: const TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
