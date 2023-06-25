@@ -191,83 +191,85 @@ class _PinAuthenticationState extends State<PinAuthentication> {
     }
     return Scaffold(
       backgroundColor: widget.pinTheme.backgroundColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // const Spacer(),
-          Text(
-            widget.action ?? "Enter PIN",
-            style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              // color: Colors.white,
-            ),
-          ),
-          // const SizedBox(
-          //   height: 5,
-          // ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              widget.actionDescription ?? "Please enter your pin to continue",
-              textAlign: TextAlign.justify,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // const Spacer(),
+            Text(
+              widget.action ?? "Enter PIN",
               style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
                 // color: Colors.white,
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
               ),
             ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              for (int i = 0; i < widget.maxLength; i++)
-                PinCodeField(
-                  key: Key('pinField$i'),
-                  pin: pin,
-                  pinCodeFieldIndex: i,
-                  theme: _pinTheme,
+            // const SizedBox(
+            //   height: 5,
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                widget.actionDescription ?? "Please enter your pin to continue",
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  // color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
                 ),
-              Icon(
-                Icons.remove_red_eye_sharp,
-                color: Theme.of(context).textTheme.bodyLarge?.color,
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                children: [
-                  buildNumberRow([1, 2, 3]),
-                  buildNumberRow([4, 5, 6]),
-                  buildNumberRow([7, 8, 9]),
-                  buildSpecialRow(),
-                ],
               ),
             ),
-          ),
-          GestureDetector(
-            key: const Key('submit'),
-            onTap: () {
-              widget.onbuttonClick!();
-            },
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
-              child: Center(
-                child: widget.submitLabel,
+            const SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                for (int i = 0; i < widget.maxLength; i++)
+                  PinCodeField(
+                    key: Key('pinField$i'),
+                    pin: pin,
+                    pinCodeFieldIndex: i,
+                    theme: _pinTheme,
+                  ),
+                Icon(
+                  Icons.remove_red_eye_sharp,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  children: [
+                    buildNumberRow([1, 2, 3]),
+                    buildNumberRow([4, 5, 6]),
+                    buildNumberRow([7, 8, 9]),
+                    buildSpecialRow(),
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+            GestureDetector(
+              key: const Key('submit'),
+              onTap: () {
+                widget.onbuttonClick!();
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
+                child: Center(
+                  child: widget.submitLabel,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
