@@ -227,11 +227,14 @@ class _PinAuthenticationState extends State<PinAuthentication> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 for (int i = 0; i < widget.maxLength; i++)
-                  PinCodeField(
-                    key: Key('pinField$i'),
-                    pin: pin,
-                    pinCodeFieldIndex: i,
-                    theme: _pinTheme,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: PinCodeField(
+                      key: Key('pinField$i'),
+                      pin: pin,
+                      pinCodeFieldIndex: i,
+                      theme: _pinTheme,
+                    ),
                   ),
                 Icon(
                   Icons.remove_red_eye_sharp,
