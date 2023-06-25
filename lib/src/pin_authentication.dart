@@ -195,12 +195,9 @@ class _PinAuthenticationState extends State<PinAuthentication> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Expanded(
-            child: SizedBox(),
-          ),
+          const Spacer(),
           Text(
             widget.action ?? "Enter PIN",
-            textAlign: TextAlign.justify,
             style: const TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
@@ -214,6 +211,7 @@ class _PinAuthenticationState extends State<PinAuthentication> {
             padding: const EdgeInsets.all(10.0),
             child: Text(
               widget.actionDescription ?? "Please enter your pin to continue",
+              textAlign: TextAlign.justify,
               style: const TextStyle(
                 // color: Colors.white,
                 fontSize: 14,
