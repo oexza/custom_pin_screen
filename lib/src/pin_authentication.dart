@@ -76,20 +76,23 @@ class _PinAuthenticationState extends State<PinAuthentication> {
       }
     }
 
-    return InkResponse(
-      onTap: onPressed,
-      key: icon?.key ?? Key("btn$number"),
-      child: Material(
-        elevation: 5,
-        color: _pinTheme.backgroundColor,
-        shape: const CircleBorder(),
-        child: Container(
-            height: 80,
-            width: 80,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-            ),
-            child: Center(child: getChild())),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: InkResponse(
+        onTap: onPressed,
+        key: icon?.key ?? Key("btn$number"),
+        child: Material(
+          elevation: 5,
+          color: _pinTheme.backgroundColor,
+          shape: const CircleBorder(),
+          child: Container(
+              height: 80,
+              width: 80,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+              ),
+              child: Center(child: getChild())),
+        ),
       ),
     );
   }
@@ -227,14 +230,11 @@ class _PinAuthenticationState extends State<PinAuthentication> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 for (int i = 0; i < widget.maxLength; i++)
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: PinCodeField(
-                      key: Key('pinField$i'),
-                      pin: pin,
-                      pinCodeFieldIndex: i,
-                      theme: _pinTheme,
-                    ),
+                  PinCodeField(
+                    key: Key('pinField$i'),
+                    pin: pin,
+                    pinCodeFieldIndex: i,
+                    theme: _pinTheme,
                   ),
                 Icon(
                   Icons.remove_red_eye_sharp,
